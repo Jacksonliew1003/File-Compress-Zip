@@ -1,4 +1,4 @@
-package fileCompressZip;
+package ZipApp.src;
 
 import java.io.*;
 
@@ -6,6 +6,8 @@ public class zipFile {
 
     public static void main(String[] args) {
         File fileInput = new File("Test.txt");
+
+        long startTime = System.nanoTime();
 
         try{
             String zipFileName = fileInput.getName().concat(".zip");
@@ -20,13 +22,15 @@ public class zipFile {
             }
             baos.close();
 
-
-
         } catch (FileNotFoundException fnfe) {
             System.err.println("File loading error!");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        long endTime = System.nanoTime();
+
+        System.out.printf("Run Time: %f ms\n", (float) (endTime - startTime)/1000000);
     }
 
 }

@@ -1,4 +1,4 @@
-package ZipApp;
+package ZipApp.src;
 
 import java.io.*;
 import java.util.zip.ZipEntry;
